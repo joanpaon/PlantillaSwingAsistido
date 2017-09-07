@@ -38,7 +38,7 @@ public class Main {
     // Valores por Defecto
     public static final String DEF_PUERTO_BLOQUEO = "54321";    
     public static final String DEF_LOOK_AND_FEEL = UtilesSwing.LNF_WINDOWS;    
-    public static final String DEF_RUTA_FAVICON = "img/favicon.ico";    
+    public static final String DEF_RUTA_FAVICON = "img/favicon.png";    
 
     // Referencias
     private final Main main;
