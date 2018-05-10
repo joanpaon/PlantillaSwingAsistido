@@ -16,43 +16,56 @@
 package org.japo.java.forms;
 
 import java.util.Properties;
+import javax.swing.JFrame;
 import org.japo.java.libraries.UtilesSwing;
-import org.japo.java.main.Main;
 
 /**
  *
  * @author José A. Pacheco Ondoño - joanpaon@gmail.com
  */
-public class GUI extends javax.swing.JFrame {
+public class GUI extends JFrame {
+
+    // Propiedades App
+    public static final String PRP_LOOK_AND_FEEL_PROFILE = "look_and_feel_profile";
+    public static final String PRP_FAVICON_RESOURCE = "favicon_resource";
+    public static final String PRP_BACKGROUND_RESOURCE = "background_resource";
+    public static final String PRP_FONT_RESOURCE = "font_resource";
+
+    // Valores por Defecto
+    public static final String DEF_LOOK_AND_FEEL_PROFILE = UtilesSwing.LNF_WINDOWS_PROFILE;
+    public static final String DEF_FAVICON_RESOURCE = "images/favicon.png";
+    public static final String DEF_BACKGROUND_RESOURCE = "images/background.png";
+    public static final String DEF_FONT_RESOURCE = "fonts/default_font.ttf";
 
     // Referencias
-    private Main main;
     private Properties prp;
 
     // Constructor
-    public GUI(Main main, Properties prp) {
-        // Inicializacion Anterior
-        initBefore(main, prp);
+    public GUI(Properties prp) {
+        // Inicialización Anterior
+        initBefore(prp);
 
-        // Creación Vista
+        // Creación Interfaz
         initComponents();
 
         // Inicializacion Posterior
         initAfter();
     }
 
+    // Construcción - GUI
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Here comes the Title");
+        setTitle("Swing Asistido #00");
+        setResizable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -66,25 +79,24 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
     //
-    // --- Lógica Aplicación --- 
-    //
-    // Inicializar GUI - PREVIA
-    private void initBefore(Main main, Properties prp) {
-        // Memorizar Referencias
-        this.main = main;
+    // Inicialización Anterior    
+    private void initBefore(Properties prp) {
+        // Memorizar Referencia
         this.prp = prp;
 
-        // Establece Lnf
-        UtilesSwing.establecerLnF(prp.getProperty(
-                Main.PRP_LOOK_AND_FEEL, Main.DEF_LOOK_AND_FEEL));
+        // Establecer LnF
+        UtilesSwing.establecerLnFProfile(prp.getProperty(
+                PRP_LOOK_AND_FEEL_PROFILE, DEF_LOOK_AND_FEEL_PROFILE));
 
-        // Establecer Favicon
-        UtilesSwing.establecerFavicon(this, prp.getProperty(
-                Main.PRP_RUTA_FAVICON, Main.DEF_RUTA_FAVICON));
+        // Panel Contenedor - Imagen de fondo
+        UtilesSwing.establecerFondoVentanaRecurso(this, prp.getProperty(
+                PRP_BACKGROUND_RESOURCE, DEF_BACKGROUND_RESOURCE));
     }
 
-    // Inicializar GUI - POSTERIOR
+    // Inicialización Posterior
     private void initAfter() {
-
+        // Establecer Favicon
+        UtilesSwing.establecerFavicon(this, prp.getProperty(
+                PRP_FAVICON_RESOURCE, DEF_FAVICON_RESOURCE));
     }
 }

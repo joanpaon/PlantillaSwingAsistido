@@ -13,34 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.japo.java.main;
+package org.japo.java.events;
 
-import java.util.Properties;
-import javax.swing.SwingUtilities;
+import java.awt.event.MouseAdapter;
 import org.japo.java.forms.GUI;
-import org.japo.java.libraries.UtilesApp;
 
 /**
  *
  * @author José A. Pacheco Ondoño - joanpaon@gmail.com
  */
-public class Main {
+public class MEM extends MouseAdapter {
 
-    // Fichero Propiedades App
-    public static final String RECURSO_PROPIEDADES = "properties/app.properties";
+    // Referencia al GUI
+    private final GUI gui;
 
-    // Entrada a la Aplicación
-    public static void main(String[] args) {
-        // Lanzar GUI
-        SwingUtilities.invokeLater(() -> {
-            // Cargar Propiedades App
-            Properties prp = UtilesApp.importarPropiedadesRecurso(RECURSO_PROPIEDADES);
-            
-            // Instanciar GUI
-            GUI gui = new GUI(prp);
-            
-            // Mostrar GUI
-            gui.setVisible(true);
-        });
+    // Constructor
+    public MEM(GUI gui) {
+        this.gui = gui;
     }
 }
