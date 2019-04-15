@@ -13,28 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.japo.java.events;
-
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
-import org.japo.java.forms.GUI;
+package org.japo.java.libraries;
 
 /**
  *
  * @author José A. Pacheco Ondoño - joanpaon@gmail.com
  */
-public final class MWEM implements MouseWheelListener {
+public final class UtilesURL {
 
-    // Referencia al GUI
-    private final GUI gui;
+    // Expresión Regular
+    public static final String ER_URL = "^(https?://)?(([\\w!~*'().&=+$%-]+: )?[\\w!~*'().&=+$%-]+@)?(([0-9]{1,3}\\.){3}[0-9]{1,3}|([\\w!~*'()-]+\\.)*([\\w^-][\\w-]{0,61})?[\\w]\\.[a-z]{2,6})(:[0-9]{1,4})?((/*)|(/+[\\w!~*'().;?:@&=+$,%#-]+)+/*)$";
 
-    // Constructor
-    public MWEM(GUI gui) {
-        this.gui = gui;
-    }
-
-    @Override
-    public void mouseWheelMoved(MouseWheelEvent e) {
-
+    // Validar URL
+    public static final boolean validarURL(String url) {
+        return UtilesValidacion.validar(url, ER_URL);
     }
 }

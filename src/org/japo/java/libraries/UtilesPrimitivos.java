@@ -1,5 +1,5 @@
-/*
- * Copyright 2016 José A. Pacheco Ondoño - joanpaon@gmail.com.
+/* 
+ * Copyright 2019 José A. Pacheco Ondoño - joanpaon@gmail.com.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ package org.japo.java.libraries;
  *
  * @author José A. Pacheco Ondoño - joanpaon@gmail.com
  */
-public class UtilesPrimitivos {
+public final class UtilesPrimitivos {
 
     // Constantes referenciales
     public static final int MAYOR = 1;

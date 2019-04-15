@@ -1,5 +1,5 @@
 /* 
- * Copyright 2017 José A. Pacheco Ondoño - joanpaon@gmail.com.
+ * Copyright 2019 José A. Pacheco Ondoño - joanpaon@gmail.com.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,21 +24,23 @@ import org.japo.java.libraries.UtilesApp;
  *
  * @author José A. Pacheco Ondoño - joanpaon@gmail.com
  */
-public class Main {
+public final class Main {
 
-    // Fichero Propiedades App
-    public static final String RECURSO_PROPIEDADES = "properties/app.properties";
+    // Constructor Oculto
+    private Main() {
 
-    // Entrada a la Aplicación
+    }
+
+    // Entrada a la aplicación
     public static void main(String[] args) {
         // Lanzar GUI
         SwingUtilities.invokeLater(() -> {
-            // Cargar Propiedades App
-            Properties prp = UtilesApp.importarPropiedadesRecurso(RECURSO_PROPIEDADES);
-            
+            // Propiedades App
+            Properties prp = UtilesApp.importarPropiedadesRecurso();
+
             // Instanciar GUI
             GUI gui = new GUI(prp);
-            
+
             // Mostrar GUI
             gui.setVisible(true);
         });

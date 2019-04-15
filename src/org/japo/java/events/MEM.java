@@ -22,7 +22,7 @@ import org.japo.java.forms.GUI;
  *
  * @author José A. Pacheco Ondoño - joanpaon@gmail.com
  */
-public class MEM extends MouseAdapter {
+public final class MEM extends MouseAdapter {
 
     // Referencia al GUI
     private final GUI gui;

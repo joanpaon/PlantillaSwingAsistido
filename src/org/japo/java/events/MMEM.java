@@ -23,7 +23,7 @@ import org.japo.java.forms.GUI;
  *
  * @author José A. Pacheco Ondoño - joanpaon@gmail.com
  */
-public class MMEM implements MouseMotionListener {
+public final class MMEM implements MouseMotionListener {
 
     // Referencia al GUI
     private final GUI gui;

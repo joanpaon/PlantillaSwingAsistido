@@ -13,28 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.japo.java.events;
-
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
-import org.japo.java.forms.GUI;
+package org.japo.java.libraries;
 
 /**
  *
  * @author José A. Pacheco Ondoño - joanpaon@gmail.com
  */
-public final class MWEM implements MouseWheelListener {
+public final class UtilesEMail {
 
-    // Referencia al GUI
-    private final GUI gui;
+    // Expresión Regular
+    public static final String ER_EMAIL = "[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*";
 
-    // Constructor
-    public MWEM(GUI gui) {
-        this.gui = gui;
-    }
-
-    @Override
-    public void mouseWheelMoved(MouseWheelEvent e) {
-
+    // Validar email
+    public static final boolean validarEMail(String email) {
+        return UtilesValidacion.validar(email, ER_EMAIL);
     }
 }

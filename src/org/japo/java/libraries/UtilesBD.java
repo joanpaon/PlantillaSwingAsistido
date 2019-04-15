@@ -1,5 +1,5 @@
-/*
- * Copyright 2017 José A. Pacheco Ondoño - joanpaon@gmail.com.
+/* 
+ * Copyright 2019 José A. Pacheco Ondoño - joanpaon@gmail.com.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ public class UtilesBD {
     private static final String PRP_PORT = "port";
     private static final String PRP_DBAM = "db";
     private static final String PRP_USER = "user";
-    private static final String PRP_PASS = "password";
+    private static final String PRP_PASS = "pass";
 
     // Formato Conexión
     private static final String FORMATO_CON = "%s://%s:%s/%s?user=%s&password=%s";
