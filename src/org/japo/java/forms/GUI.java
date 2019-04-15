@@ -142,7 +142,7 @@ public final class GUI extends JFrame {
 
         // Etiqueta
         lblRotulo.setFont(fntSample.deriveFont(70f));
-        
+
         // Ventana Principal
         setTitle(prp.getProperty(PRP_FORM_TITLE, DEF_FORM_TITLE));
         try {
