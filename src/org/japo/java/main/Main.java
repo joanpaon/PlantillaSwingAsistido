@@ -15,7 +15,10 @@
  */
 package org.japo.java.main;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
+import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import org.japo.java.forms.GUI;
 import org.japo.java.libraries.UtilesApp;
@@ -25,6 +28,12 @@ import org.japo.java.libraries.UtilesApp;
  * @author José A. Pacheco Ondoño - joanpaon@gmail.com
  */
 public final class Main {
+
+    // Colección de Ventanas
+    public static final List<JFrame> VIEW_LIST = new ArrayList<>();
+
+    // Entidades Intercambio Datos
+    public static final List<Object> DATA_LIST = new ArrayList<>();
 
     // Constructor Oculto
     private Main() {
@@ -38,10 +47,13 @@ public final class Main {
             // Propiedades App
             Properties prp = UtilesApp.importarPropiedadesRecurso();
 
-            // Instanciar GUI
+            // Instanciar Vistas
             GUI gui = new GUI(prp);
 
-            // Mostrar GUI
+            // Incorporar Vistas
+            VIEW_LIST.add(gui);
+
+            // Mostrar Vista
             gui.setVisible(true);
         });
     }

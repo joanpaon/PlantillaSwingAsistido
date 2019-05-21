@@ -223,6 +223,19 @@ public final class UtilesSwing {
         return imgFin;
     }
 
+    // Escalar Image > Etiqueta
+    public static void escalarImagenEtiqueta(JLabel lblAct, Image imgIni, int ancAct, int altAct) {
+        try {
+            // Imagen Original >> Imagen Escalada 
+            Image imgFin = imgIni.getScaledInstance(ancAct, altAct, Image.SCALE_FAST);
+
+            // Icon > Etiqueta Imagen
+            lblAct.setIcon(new ImageIcon(imgFin));
+        } catch (Exception e) {
+            System.out.println("ERROR: No se ha podido adaptar imagen a etiqueta");
+        }
+    }
+
     // Portapapeles >> Texto
     public static final String importarTextoPortapapeles() {
         // Referencia al texto del portapapeles
@@ -443,7 +456,7 @@ public final class UtilesSwing {
         return fuente;
     }
 
-    // Fuente ( Recurso | Sistema | Lógica ) > Fuente
+    // Fuente ( Recurso | Sistema | Lógica ) + Estilo + Talla > Fuente
     public static final Font generarFuenteRecurso(String recurso,
             String fuenteSistema, String fuenteLogica) {
         return generarFuenteRecurso(recurso, DEF_FONT_STYLE, DEF_FONT_STYLE,
